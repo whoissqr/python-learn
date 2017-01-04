@@ -1,0 +1,9 @@
+def testArgs(a, b, c=0, *args, **kw):
+
+    print 'a =', a, 'b =', b, 'c =', c, 'args =', args, 'kw =', kw
+
+testArgs('aa','bb', 'c','d1', 'd2','d3', kw='kw')
+
+testArgs('aa','bb', 'c')
+
+testArgs('aa','bb')
