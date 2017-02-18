@@ -1,0 +1,1 @@
+import sysdef problem3_6(file1, file2):        infile = open(file1,'r')     outfile = open(file2,'w')    for line in infile:        print(line)        outfile.write(line.strip("\n"))    infile.close()    outfile.close()if __name__ == "__main__":    print("run")    problem3_6(sys.argv[0], sys.argv[1])
