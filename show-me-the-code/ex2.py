@@ -41,8 +41,9 @@ def readFromDB():
     for row in conn.execute('SELECT * FROM coupons'):
         print(row)
     
-two_hundred_coupons()
-saveToDB()
-readFromDB()
+if __name__ == '__main__':
+     two_hundred_coupons()
+     saveToDB()
+     readFromDB()
 #%%
 
