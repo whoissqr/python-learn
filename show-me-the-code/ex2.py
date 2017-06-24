@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-第 0002 题: 将 0001 题生成的 200 个激活码（或者优惠券）保存到 MySQL 关系型数据库中。
+Generate some random numbers and store them to sqlite;
+tested under Spyder (Python 3.5)
 @author: sqr
 """
 #%%
@@ -21,7 +22,8 @@ def two_hundred_coupons():
 #    conpons = set()
     digit = 10
     for i in range(2):
-        data = '%03d' % i                    ##数字编码放在最前面，保证验证码唯一性
+        #prepend the coupon with a number to ensure it is unique
+        data = '%03d' % i                    
         data += get_coupon(digit)
         coupons.append(data)
     return coupons
