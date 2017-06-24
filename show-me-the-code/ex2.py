@@ -28,7 +28,7 @@ def two_hundred_coupons():
         coupons.append(data)
     return coupons
 
-def save2DB():
+def saveToDB():
     conn = sqlite3.connect('ex2.db')
     conn.execute('create table if not exists coupons (coupon_num text)')
     for coupon in coupons:
@@ -42,7 +42,7 @@ def readFromDB():
         print(row)
     
 two_hundred_coupons()
-save2DB()
+saveToDB()
 readFromDB()
 #%%
 
