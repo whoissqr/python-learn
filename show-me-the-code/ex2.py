@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """
 Generate some random numbers and store them to sqlite;
+coupon format [3 digits + 10 alphabets]
+each run wil store 2 more coupon as rows in a sqlite file named 'ex2.db'
 tested under Spyder (Python 3.5)
 @author: sqr
 """
@@ -12,13 +14,13 @@ import sqlite3
 words = string.ascii_letters + string.digits
 coupons = []
 
-def  get_coupon(digit):
+def get_coupon(digit):
     conpon = ''
     for i in range(digit):
         conpon += random.choice(words)
     return conpon
 
-def two_hundred_coupons():
+def generate_coupons():
 #    conpons = set()
     digit = 10
     for i in range(2):
@@ -42,7 +44,7 @@ def readFromDB():
         print(row)
     
 if __name__ == '__main__':
-     two_hundred_coupons()
+     generate_coupons()
      saveToDB()
      readFromDB()
 #%%
