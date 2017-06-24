@@ -30,7 +30,7 @@ def two_hundred_coupons():
 
 def save2DB():
     conn = sqlite3.connect('ex2.db')
-    conn.execute('''create table if not exists coupons (coupon_num text)''')
+    conn.execute('create table if not exists coupons (coupon_num text)')
     for coupon in coupons:
         conn.execute("INSERT INTO coupons VALUES (?)", (coupon,))
     conn.commit()
