@@ -10,25 +10,22 @@ tested under Spyder (Python 3.5)
 
 import re
 
-fin=open("ex4.txt","r")
-fout=open("result.txt","w")
-str=fin.read()
-#匹配正则表达式
-reObj=re.compile("\b?([a-zA-Z]+)\b?")
-words=reObj.findall(str)
-#建立空字典
-word_dict={}
+fin = open('ex4.txt', 'r')
+str = fin.read()
 
-#以单词的小写作为键值进行统计，同时要
-if __name__ == '__main__':
-    for word in words:
-        if(word_dict.has_key(word)):
-            word_dict[word.lower()]=max(word_dict[word.lower()],words.count(word.lower())+words.count(word.upper())+words.count(word))
-        else:
-            word_dict[word.lower()]=max(0,words.count(word.lower())+words.count(word.upper())+words.count(word))       
-    for(word,number) in word_dict.items():
-        fout.write(word+":%d\n"%number)
-    
+reObj = re.compile('\b?(\w+)\b?')
+words = reObj.findall(str)
+
+wordDict = dict()
+
+for word in words:
+    if word.lower() in wordDict:
+        wordDict[word.lower()] += 1
+    else:
+        wordDict[word] = 1
+
+for key, value in wordDict.items():
+    print('%s: %s' % (key, value))
 
 
 #%%
