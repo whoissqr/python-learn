@@ -90,3 +90,6 @@ ENV/
 
 # SqliteDB files
 .db
+
+# temp files
+*~
