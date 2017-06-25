@@ -12,7 +12,7 @@ import string
 import sqlite3
 
 words = string.ascii_letters + string.digits
-coupons = []
+coupons = set()
 
 def get_coupon(digit):
     conpon = ''
@@ -27,7 +27,7 @@ def generate_coupons():
         #prepend the coupon with a number to ensure it is unique
         data = '%03d' % i                    
         data += get_coupon(digit)
-        coupons.append(data)
+        coupons.add(data)
     return coupons
 
 def saveToDB():
